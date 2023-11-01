@@ -101,7 +101,7 @@ class_report = classification_report(y_test, y_pred)
 ```
 
 ## Results
-
+The accuracy is 93.8% for this model,which is obtained by
 ```
 accuracy_percentage = accuracy * 100
 print(f'Accuracy: {accuracy_percentage:.2f}%')

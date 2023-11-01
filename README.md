@@ -9,12 +9,7 @@
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data Preparation](#data-preparation)
-- [Training the Model](#training-the-model)
-- [Making Predictions](#making-predictions)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
@@ -52,60 +47,41 @@ Before you begin, make sure you have the following dependencies installed:
 ## Usage
 
 To use this code, follow these steps:
+# Tamil Nadu Company Data Analysis
 
-### Data Preparation
+This project involves analyzing and visualizing data related to companies in Tamil Nadu, India. It uses Python libraries like Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn to perform data processing, exploration, and machine learning.
+### Data set Source
 
-1. Obtain the RoC dataset: [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019].
+ RoC dataset: [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019].
 
-2. Preprocess the dataset as needed using the provided scripts or customize them for your data format.
+## Usage
 
-### Model
+The code provided in this repository can be used to:
 
-The Random forest Classifier model is used.
+1. Load the dataset from a CSV file (Data_Gov_Tamil_Nadu.csv).
+2. Data preprocessing:
+   - Remove duplicate records.
+   - Remove rows with missing values.
+   - Data standardisation
+   - Data type conversion
+3. Save the cleaned dataset to a new CSV file (CleanesDataFile.csv).
+4. Perform data analysis and visualization, including:
+   - Descriptive statistics using Pandas.
+   - Count the values of the "PAIDUP_CAPITAL" and "INDUSTRIAL_CLASS" columns.
+   - Create various plots and visualizations using Matplotlib and Seaborn.
+5. Train a Random Forest Classifier to predict the "COMPANY_CLASS" based on the dataset.
+6. Evaluate the model's performance by calculating accuracy, generating a confusion matrix, and creating a classification report.
 
-### Dataset splitting
- The cleaned data set is splitted into two parts, one for training and other for evaluating the model
- the x and y columns are,
+## Prerequisites
 
- ```
-X = df_encoded.drop(['COMPANY_CLASS'], axis=1)
-y = df_encoded['COMPANY_CLASS']
-```
+Before running the code, you need to have Python installed, and you should install the following Python packages using pip:
 
- Dataset is splitted by,
+`bash
+pip install pandas numpy scikit-learn matplotlib seaborn
 
- ```
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-```
 
-### Model Training
 
-The model is trained using one set of splittrd data
-
-```
-rf_classifier.fit(X_train, y_train)
-
-```
-### model Prediction
-To make predictions on the test data
-```
-y_pred = rf_classifier.predict(X_test)
-```
-## model evaluation
-the model
-```
-accuracy = accuracy_score(y_test, y_pred)
-conf_matrix = confusion_matrix(y_test, y_pred)
-class_report = classification_report(y_test, y_pred)
-```
-
-## Results
-The accuracy is 93.8% for this model,which is obtained by
-```
-accuracy_percentage = accuracy * 100
-print(f'Accuracy: {accuracy_percentage:.2f}%')
-```
 
 ## Contributing
 

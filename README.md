@@ -44,7 +44,7 @@ Before you begin, make sure you have the following dependencies installed:
    pip install -r requirements.txt
    ```
 
-## Data set Source
+## Dataset
 
  RoC dataset: [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019].
  

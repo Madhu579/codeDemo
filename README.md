@@ -1,96 +1,137 @@
 
-# AI_PHASE5
+# AI_PHASE_5
+
 # AI-Driven Exploration and Prediction of Company Registration Trends with RoC
 
-This repository contains code and resources for exploring and predicting company registration trends using the Registrar of Companies (RoC) dataset. The project leverages artificial intelligence and data analysis techniques to provide insights into company registration patterns.
-## Data Source:(https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019) 
 ## Table of Contents
-## 
+
+- [Overview](#overview)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data](#data)
-- [Exploration](#exploration)
-- [Prediction](#prediction)
+- [Data Preparation](#data-preparation)
+- [Training the Model](#training-the-model)
+- [Making Predictions](#making-predictions)
+- [Results](#results)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Overview
+
+This repository contains code for an AI-driven exploration and prediction system to analyze Company Registration Trends using data from the Registrar of Companies (RoC). It includes data preparation, model training, and prediction components, all designed to help you gain insights and forecast trends in company registrations.
+
 ## Dependencies
 
-Before running the code, ensure you have the following dependencies installed:
+Before you begin, make sure you have the following dependencies installed:
 
-- Python 3.6 or higher
-- Jupyter Notebook (for running the provided notebooks)
-- Required Python libraries, which can be installed using `pip`:
-    - pandas
-    - numpy
-    - scikit-learn
-    - matplotlib
-    - seaborn
-    - etc. (list all relevant libraries)
-
-You can install the necessary Python libraries using the following command:
-
-```
-pip install -r requirements.txt
-```
+- Python 3.x
+- Jupyter Notebook (for running the notebooks)
+- Required Python libraries (install them via `pip`):
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - ...
 
 ## Installation
 
-1. Clone this repository to your local machine:
+1. Clone the repository to your local machine:
 
-```
-git clone https://github.com/MadhuMalathiBN/NaanMudhalvan.git
-```
+   ```bash
+   git clone https://github.com/MadhuMalathiBN/NaanMudhalvan.git
+   cd NaanMudhalvan
+   ```
 
-2. Navigate to the project directory:
+2. Install the required Python packages:
 
-```
-cd NaanMudhalvan
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-This project is divided into two main parts: data exploration and prediction.
+To use this code, follow these steps:
 
-### Data
+### Data Preparation
 
-The RoC dataset used for this project is available at [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019]. You should download and place the dataset in the `data` folder with the filename `gov_data.csv`.
+1. Obtain the RoC dataset: [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019].
 
-### Exploration
+2. Preprocess the dataset as needed using the provided scripts or customize them for your data format.
 
-To explore the dataset and gain insights, run the Jupyter Notebook `Exploration.ipynb`:
+### Model
 
-```
-jupyter notebook Exploration.ipynb
-```
+The Random forest Classifier model is used.
 
-Follow the instructions in the notebook to explore the data and generate visualizations.
+### Dataset splitting
+ The cleaned data set is splitted into two parts, one for training and other for evaluating the model
+ the x and y columns are,
 
-### Prediction
-
-To predict company registration trends using the provided machine learning model, run the Jupyter Notebook `Prediction.ipynb`:
-
-```
-jupyter notebook Prediction.ipynb
+ ```
+X = df_encoded.drop(['COMPANY_CLASS'], axis=1)
+y = df_encoded['COMPANY_CLASS']
 ```
 
-Follow the instructions in the notebook to train and evaluate the prediction model.
+ Dataset is splitted by,
+
+ ```
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+```
+
+### Model Training
+
+The model is trained using one set of splittrd data
+
+```
+rf_classifier.fit(X_train, y_train)
+
+```
+### model Prediction
+To make predictions on the test data
+```
+y_pred = rf_classifier.predict(X_test)
+```
+## model evaluation
+the model
+```
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred)
+```
+
+## Results
+
+```
+accuracy_percentage = accuracy * 100
+print(f'Accuracy: {accuracy_percentage:.2f}%')
+```
 
 ## Contributing
 
-If you would like to contribute to this project, please follow these steps:
+If you'd like to contribute to this project, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them with descriptive messages.
-4. Push your branch to your fork.
-5. Submit a pull request to the main repository's `develop` branch.
+1. Fork the repository on GitHub.
+
+2. Clone your fork locally and create a new branch for your work:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. Make your changes, commit them, and push to your fork:
+
+   ```bash
+   git commit -m "Your commit message"
+   git push origin feature/your-feature-name
+   ```
+
+4. Create a pull request from your fork to the main repository.
 
 ## License
 
-This project is licensed under the [Your License] License - see the [LICENSE](LICENSE) file for details.
+[Specify the license under which your code is released. Common options include MIT, Apache 2.0, or GPLv3.]
 
 ---
 
-Feel free to customize this README to match your specific project requirements and structure. Be sure to replace `[provide_data_source_link]` with the actual link to your data source and `[Your License]` with the appropriate license information for your project.
+Feel free to customize this README according to your project's specific needs and provide additional information or resources as necessary. A well-structured README will help users understand how to run your code and make the most of your AI-driven exploration and prediction system for Company Registration Trends with RoC.

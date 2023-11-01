@@ -128,10 +128,4 @@ If you'd like to contribute to this project, please follow these steps:
 
 4. Create a pull request from your fork to the main repository.
 
-## License
 
-[Specify the license under which your code is released. Common options include MIT, Apache 2.0, or GPLv3.]
-
----
-
-Feel free to customize this README according to your project's specific needs and provide additional information or resources as necessary. A well-structured README will help users understand how to run your code and make the most of your AI-driven exploration and prediction system for Company Registration Trends with RoC.

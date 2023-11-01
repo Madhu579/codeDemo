@@ -19,15 +19,14 @@ This repository contains code for an AI-driven exploration and prediction system
 
 Before you begin, make sure you have the following dependencies installed:
 
-- Python 3.x
+- Python installed
 - Jupyter Notebook (for running the notebooks)
 - Required Python libraries (install them via `pip`):
   - pandas
   - numpy
   - scikit-learn
   - matplotlib
-  - seaborn
-  - ...
+  - seaborn   
 
 ## Installation
 
@@ -47,9 +46,10 @@ Before you begin, make sure you have the following dependencies installed:
 ## Usage
 
 To use this code, follow these steps:
-# Tamil Nadu Company Data Analysis
 
-This project involves analyzing and visualizing data related to companies in Tamil Nadu, India. It uses Python libraries like Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn to perform data processing, exploration, and machine learning.
+This project involves analyzing and visualizing data related to companies in Tamil Nadu, India. 
+It uses Python libraries like Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn to perform data processing, exploration, and machine learning.
+
 ### Data set Source
 
  RoC dataset: [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019].
@@ -78,9 +78,6 @@ Before running the code, you need to have Python installed, and you should insta
 
 `bash
 pip install pandas numpy scikit-learn matplotlib seaborn
-
-
-
 
 
 ## Contributing

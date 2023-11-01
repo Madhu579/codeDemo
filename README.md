@@ -50,12 +50,8 @@ Before you begin, make sure you have the following dependencies installed:
  
 ## Usage
 
-To use this code, follow these steps:
-
 This project involves analyzing and visualizing data related to companies in Tamil Nadu, India. 
 It uses Python libraries like Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn to perform data processing, exploration, and machine learning.
-
-## Usage
 
 The code provided in this repository can be used to:
 

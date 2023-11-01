@@ -1,11 +1,11 @@
 
-
+# AI_PHASE5
 # AI-Driven Exploration and Prediction of Company Registration Trends with RoC
 
 This repository contains code and resources for exploring and predicting company registration trends using the Registrar of Companies (RoC) dataset. The project leverages artificial intelligence and data analysis techniques to provide insights into company registration patterns.
-
+## Data Source:(https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019) 
 ## Table of Contents
-
+## 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -40,13 +40,13 @@ pip install -r requirements.txt
 1. Clone this repository to your local machine:
 
 ```
-git clone https://github.com/yourusername/AI-Company-Registration-Trends.git
+git clone https://github.com/MadhuMalathiBN/NaanMudhalvan.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd AI-Company-Registration-Trends
+cd NaanMudhalvan
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ This project is divided into two main parts: data exploration and prediction.
 
 ### Data
 
-The RoC dataset used for this project is available at [provide_data_source_link]. You should download and place the dataset in the `data` folder with the filename `roc_data.csv`.
+The RoC dataset used for this project is available at [https://tn.data.gov.in/resource/company-master-data-tamil-nadu-upto-28th-february-2019]. You should download and place the dataset in the `data` folder with the filename `gov_data.csv`.
 
 ### Exploration
 
